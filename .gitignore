@@ -7,7 +7,12 @@ CCTV Footage/
 *.mov
 POS*.csv
 sample_events*.jsonl
-output/
+store-intelligence/output/*
+!store-intelligence/output/README.md
+!store-intelligence/output/submission_events.jsonl
+!store-intelligence/output/sample_format_events.jsonl
+!store-intelligence/output/store-1/events/**
+!store-intelligence/output/store-2/events/**
 *.pt
 *.pdf
 *.xlsx

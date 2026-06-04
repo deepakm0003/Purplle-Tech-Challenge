@@ -26,8 +26,9 @@ End-to-end **offline store intelligence** for specialty retail: anonymised CCTV 
 11. [Stores: Store 1 vs Store 2](#stores-store-1-vs-store-2)
 12. [Testing & validation](#testing--validation)
 13. [Troubleshooting](#troubleshooting)
-14. [Submission checklist](#submission-checklist)
-15. [Further reading](#further-reading)
+14. [Pipeline output — files and locations](#pipeline-output--files-and-locations)
+15. [Submission checklist](#submission-checklist)
+16. [Further reading](#further-reading)
 
 ---
 
@@ -42,7 +43,45 @@ End-to-end **offline store intelligence** for specialty retail: anonymised CCTV 
 
 **North-star metric:** offline conversion rate = unique visitors who purchased ÷ unique visitors (staff excluded).
 
-**Pre-loaded data:** `store-intelligence/data/bootstrap/` contains pipeline JSONL for Store 1 and Store 2 so metrics work immediately after the API starts — no CCTV files required for review.
+**Pre-loaded data:** Pipeline results are **committed in the repo** (see [Pipeline output](#pipeline-output--files-and-locations)). The API loads them on startup — no CCTV files required for review.
+
+---
+
+## Pipeline output — files and locations
+
+After `python scripts/process_stores.py` the pipeline writes under **`store-intelligence/output/`**. The same event files are mirrored for reviewers in **`data/bootstrap/`**.
+
+| Output file / folder | What it contains | Used by |
+|---------------------|------------------|---------|
+| `output/store-1/events/*.jsonl` | Per-camera events for Store 1 (`ST1008`) | API bootstrap, analytics |
+| `output/store-2/events/*.jsonl` | Per-camera events for Store 2 (`ST2002`) | API bootstrap, analytics |
+| `output/submission_events.jsonl` | **525 merged events** — challenge `Event` schema | `POST /api/analytics/events/ingest` |
+| `output/sample_format_events.jsonl` | Same events, sample-file shape | Validation vs `sample_eventsbe42122.jsonl` |
+| `data/bootstrap/store-*/events/` | **Git copy** of per-camera JSONL (for reviewers) | API on startup |
+| `data/submission/submission_events.jsonl` | **Git copy** of merged challenge schema | Ingest / scoring |
+| `output/store-*/tracks/*_tracks.json` | Bounding boxes per frame (local only, not in git) | Dashboard CCTV overlay when you run pipeline |
+
+**Regenerate merged files:**
+
+```powershell
+cd store-intelligence
+python scripts/build_submission_events.py
+```
+
+**Copy latest events into git-backed bootstrap:**
+
+```powershell
+python scripts/sync_bootstrap_events.py
+```
+
+Details: [`store-intelligence/output/README.md`](store-intelligence/output/README.md)
+
+**Your machine vs GitHub clone path**
+
+| Context | Path to run Docker |
+|---------|-------------------|
+| This workspace | `D:\Purple Tech Hiring Challenge\store-intelligence` |
+| After `git clone` | `<clone-folder>\store-intelligence` (e.g. `Purplle-Tech-Challenge\store-intelligence`) |
 
 ---
 
@@ -180,9 +219,11 @@ Optional: NVIDIA GPU for faster YOLO inference (`--model nano` works on CPU).
 
 ```powershell
 git clone https://github.com/deepakm0003/Purplle-Tech-Challenge.git
-cd Purplle-Tech-Challenge\store-intelligence
+cd Purplle-Tech-Challenge\store-intelligence   # folder that contains docker-compose.yml
 docker compose up -d --build
 ```
+
+> If you already have the project at `D:\Purple Tech Hiring Challenge\store-intelligence`, use that path instead — do **not** use a nested `Purplle-Tech-Challenge` folder unless you cloned there.
 
 First build may take **5–15 minutes** (downloads Python image + `pip install`).
 
@@ -514,8 +555,10 @@ curl http://localhost:8000/api/analytics/stores/ST1008/metrics
 
 | Document | Description |
 |----------|-------------|
+| [`HACKEREARTH_SUBMISSION.md`](HACKEREARTH_SUBMISSION.md) | Copy-paste HackerEarth form text |
 | [`store-intelligence/DESIGN.md`](store-intelligence/DESIGN.md) | Architecture + AI-assisted decisions |
 | [`store-intelligence/CHOICES.md`](store-intelligence/CHOICES.md) | Model, schema, API trade-offs |
+| [`store-intelligence/output/README.md`](store-intelligence/output/README.md) | Pipeline output file map |
 | [`store-intelligence/README.md`](store-intelligence/README.md) | Backend deep-dive |
 | [`store-intelligence/data/README.md`](store-intelligence/data/README.md) | Where to place CSV / videos |
 | [`docs/screenshots/README.md`](docs/screenshots/README.md) | Screenshot filenames |

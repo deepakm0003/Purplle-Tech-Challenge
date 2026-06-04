@@ -138,6 +138,8 @@ logs/
 data/*
 !data/bootstrap/
 !data/bootstrap/**
+!data/submission/
+!data/submission/**
 !data/README.md
 models/
 *.pt
@@ -145,7 +147,16 @@ models/
 *.xlsx
 *.csv
 dev.db
-output/
+output/*
+!output/README.md
+!output/submission_events.jsonl
+!output/sample_format_events.jsonl
+!output/store-1/
+!output/store-1/events/
+!output/store-1/events/**
+!output/store-2/
+!output/store-2/events/
+!output/store-2/events/**
 temp/
 Store 1/
 Store 2/
