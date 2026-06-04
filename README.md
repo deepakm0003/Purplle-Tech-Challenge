@@ -539,17 +539,6 @@ curl http://localhost:8000/api/analytics/stores/ST1008/metrics
 
 ---
 
-## Submission checklist
-
-- [x] GitHub: https://github.com/deepakm0003/Purplle-Tech-Challenge
-- [ ] Invite `purplletechchallenge2026@hackerearth.com` (private repo)
-- [x] `DESIGN.md` + `CHOICES.md`
-- [x] `docker compose up` documented above
-- [x] Bootstrap JSONL in `data/bootstrap/`
-- [x] No `Store 1/` / `Store 2/` / `*.mp4` in git
-- [ ] Screenshots `02`–`07` in `docs/screenshots/`
-
----
 
 ## Further reading
 
