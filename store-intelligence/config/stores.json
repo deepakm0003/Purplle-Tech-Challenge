@@ -1,0 +1,78 @@
+{
+  "sample_events_file": "sample_eventsbe42122.jsonl",
+  "pos_file": "POS - sample transactionsb1e826f.csv",
+  "sample_events_store_map": {
+    "store_1076": "ST1008",
+    "ST1076": "ST1008"
+  },
+  "stores": [
+    {
+      "id": "ST1008",
+      "name": "Store 1",
+      "slug": "store-1",
+      "folder": "Store 1",
+      "layout_file": "Store 1 - layout.png",
+      "pos_store_ids": ["ST1008"],
+      "cameras": [
+        {
+          "id": "CAM-ENTRY",
+          "file": "CAM 3 - entry.mp4",
+          "role": "entry",
+          "label": "Entry / Exit"
+        },
+        {
+          "id": "CAM-ZONE-1",
+          "file": "CAM 1 - zone.mp4",
+          "role": "zone",
+          "label": "Main floor (zone 1)"
+        },
+        {
+          "id": "CAM-ZONE-2",
+          "file": "CAM 2 - zone.mp4",
+          "role": "zone",
+          "label": "Main floor (zone 2)"
+        },
+        {
+          "id": "CAM-BILLING",
+          "file": "CAM 5 - billing.mp4",
+          "role": "billing",
+          "label": "Billing"
+        }
+      ]
+    },
+    {
+      "id": "ST2002",
+      "name": "Store 2",
+      "slug": "store-2",
+      "folder": "Store 2",
+      "layout_file": "store 2 - layout.png",
+      "pos_store_ids": ["ST2002"],
+      "cameras": [
+        {
+          "id": "CAM-ENTRY-1",
+          "file": "entry 1.mp4",
+          "role": "entry",
+          "label": "Entry 1"
+        },
+        {
+          "id": "CAM-ENTRY-2",
+          "file": "entry 2.mp4",
+          "role": "entry",
+          "label": "Entry 2"
+        },
+        {
+          "id": "CAM-ZONE",
+          "file": "zone.mp4",
+          "role": "zone",
+          "label": "Main floor"
+        },
+        {
+          "id": "CAM-BILLING",
+          "file": "billing_area.mp4",
+          "role": "billing",
+          "label": "Billing"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "store_id": "ST1008",
+  "store_name": "Brigade Bangalore",
+  "camera_id": "CAM-ENTRY-01",
+  "zones": [
+    {
+      "zone_id": "ENTRY",
+      "name": "Store Entrance",
+      "description": "Entry/exit threshold",
+      "polygon": [[0, 400], [200, 400], [200, 600], [0, 600]],
+      "color": "#FF0000"
+    },
+    {
+      "zone_id": "SKINCARE",
+      "name": "Skincare Section",
+      "polygon": [[250, 100], [500, 100], [500, 350], [250, 350]],
+      "color": "#FFA500"
+    },
+    {
+      "zone_id": "MAKEUP",
+      "name": "Makeup Section",
+      "polygon": [[520, 100], [800, 100], [800, 350], [520, 350]],
+      "color": "#FFFF00"
+    },
+    {
+      "zone_id": "HAIRCARE",
+      "name": "Haircare Section",
+      "polygon": [[250, 370], [500, 370], [500, 600], [250, 600]],
+      "color": "#00FF00"
+    },
+    {
+      "zone_id": "CHECKOUT",
+      "name": "Billing Counter",
+      "polygon": [[520, 370], [800, 370], [800, 600], [520, 600]],
+      "color": "#0000FF"
+    }
+  ]
+}

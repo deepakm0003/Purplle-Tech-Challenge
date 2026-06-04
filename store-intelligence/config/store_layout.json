@@ -1,0 +1,60 @@
+{
+  "store_id": "ST1008",
+  "store_name": "Brigade Bangalore",
+  "reference_size": { "width": 800, "height": 600 },
+  "open_hours": "10:00-22:00",
+  "cameras": [
+    { "camera_id": "CAM-1", "role": "main_floor", "label": "Main floor" },
+    { "camera_id": "CAM-2", "role": "main_floor", "label": "Main floor 2" },
+    { "camera_id": "CAM-3", "role": "billing", "label": "Billing counter" },
+    { "camera_id": "CAM-4", "role": "entry", "label": "Entry / exit" },
+    { "camera_id": "CAM-5", "role": "main_floor", "label": "Aisle coverage" }
+  ],
+  "brand_aisles": [
+    { "zone_id": "TOP_EB", "name": "EB / Salm", "wall": "top" },
+    { "zone_id": "TOP_TFS", "name": "TFS", "wall": "top" },
+    { "zone_id": "TOP_MINIMALIST", "name": "Minimalist / DermDoc", "wall": "top" },
+    { "zone_id": "TOP_AQUALOGICA", "name": "Aqualogica / Foxtale", "wall": "top" },
+    { "zone_id": "BOTTOM_MAYBELLINE", "name": "Maybelline / Faces / Lakme", "wall": "bottom" },
+    { "zone_id": "BOTTOM_LOREAL", "name": "L'Oreal / Alps", "wall": "bottom" },
+    { "zone_id": "FOH_NAIL", "name": "Nail / Fragrance gondola", "area": "center-left" },
+    { "zone_id": "FOH_MAKEUP", "name": "Makeup units (FOH)", "area": "center" }
+  ],
+  "zones": [
+    {
+      "zone_id": "ENTRY",
+      "name": "Store Entrance",
+      "description": "Entry/exit threshold — inbound/outbound",
+      "polygon": [[0, 400], [200, 400], [200, 600], [0, 600]],
+      "color": "#ef4444"
+    },
+    {
+      "zone_id": "SKINCARE",
+      "name": "Skincare Aisle",
+      "description": "Top-wall skincare brands",
+      "polygon": [[250, 100], [500, 100], [500, 350], [250, 350]],
+      "color": "#f97316"
+    },
+    {
+      "zone_id": "MAKEUP",
+      "name": "Makeup / FOH",
+      "description": "Center makeup units + top-wall colour",
+      "polygon": [[520, 100], [800, 100], [800, 350], [520, 350]],
+      "color": "#eab308"
+    },
+    {
+      "zone_id": "HAIRCARE",
+      "name": "Haircare Aisle",
+      "description": "Bottom-wall haircare brands",
+      "polygon": [[250, 370], [500, 370], [500, 600], [250, 600]],
+      "color": "#22c55e"
+    },
+    {
+      "zone_id": "CHECKOUT",
+      "name": "Cash Counter / Billing",
+      "description": "Billing queue and POS correlation window",
+      "polygon": [[520, 370], [800, 370], [800, 600], [520, 600]],
+      "color": "#3b82f6"
+    }
+  ]
+}
