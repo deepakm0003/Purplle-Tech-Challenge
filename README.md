@@ -431,69 +431,10 @@ VITE_STORE_ID=ST1008
 
 ---
 
-## Screenshots — how to capture
 
-Save PNG files under `docs/screenshots/` (width **1400–1600px** recommended). They render automatically in this README on GitHub.
+<img width="1920" height="2174" alt="screencapture-localhost-8000-api-docs-2026-06-04-21_37_04" src="https://github.com/user-attachments/assets/af7c05c1-32a1-44cb-95b7-a233c3a69cb0" />
 
-| File | What to capture |
-|------|-----------------|
-| `01-github-repository.png` | GitHub repo file list |
-| `02-dashboard-overview.png` | http://localhost:5173 — Overview |
-| `03-sales-intelligence.png` | `/sales` page |
-| `04-store-cctv-tracks.png` | `/cctv` with boxes on video |
-| `05-store-map-heatmap.png` | `/store` floorplan |
-| `06-api-swagger.png` | Swagger UI (steps below) |
-| `07-docker-compose.png` | Terminal after `docker compose ps` |
 
-### How to capture the API Swagger screenshot (`06-api-swagger.png`)
-
-1. Start the API (`docker compose up -d --build` or `uvicorn`).
-2. Open **http://localhost:8000/api/docs** in Chrome or Edge.
-3. Expand **`GET /api/analytics/stores/{store_id}/metrics`**.
-4. Click **Try it out** → set `store_id` to **`ST2002`** → **Execute**.
-5. Confirm **200** response with `unique_visitors` > 0 in the body.
-6. **Screenshot:**
-   - **Windows:** `Win + Shift + S` → select the browser window (include URL bar + endpoint list + response).
-   - Or browser **full page**: DevTools (`F12`) → `Ctrl + Shift + P` → type **Capture screenshot**.
-7. Save as `docs/screenshots/06-api-swagger.png`.
-8. Commit and push:
-
-```powershell
-git add docs/screenshots/06-api-swagger.png README.md
-git commit -m "Add API Swagger screenshot"
-git push origin main
-```
-
-### How to capture the Docker screenshot (`07-docker-compose.png`)
-
-1. Run:
-
-```powershell
-cd store-intelligence
-docker compose up -d --build
-docker compose ps
-```
-
-2. Screenshot the terminal showing three services **running** / **healthy**.
-3. Save as `docs/screenshots/07-docker-compose.png`.
-
-### Gallery (placeholders until you add images)
-
-![GitHub repository](docs/screenshots/01-github-repository.png)
-
-![Dashboard overview](docs/screenshots/02-dashboard-overview.png)
-
-![Sales and intelligence](docs/screenshots/03-sales-intelligence.png)
-
-![CCTV tracking](docs/screenshots/04-store-cctv-tracks.png)
-
-![Store heatmap](docs/screenshots/05-store-map-heatmap.png)
-
-![API Swagger UI](docs/screenshots/06-api-swagger.png)
-
-![Docker Compose](docs/screenshots/07-docker-compose.png)
-
----
 
 ## Stores: Store 1 vs Store 2
 
