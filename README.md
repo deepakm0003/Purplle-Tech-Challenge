@@ -27,8 +27,6 @@ End-to-end **offline store intelligence** for specialty retail: anonymised CCTV 
 12. [Testing & validation](#testing--validation)
 13. [Troubleshooting](#troubleshooting)
 14. [Pipeline output — files and locations](#pipeline-output--files-and-locations)
-15. [Submission checklist](#submission-checklist)
-16. [Further reading](#further-reading)
 
 ---
 
