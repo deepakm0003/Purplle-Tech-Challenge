@@ -544,7 +544,6 @@ curl http://localhost:8000/api/analytics/stores/ST1008/metrics
 
 | Document | Description |
 |----------|-------------|
-| [`HACKEREARTH_SUBMISSION.md`](HACKEREARTH_SUBMISSION.md) | Copy-paste HackerEarth form text |
 | [`store-intelligence/DESIGN.md`](store-intelligence/DESIGN.md) | Architecture + AI-assisted decisions |
 | [`store-intelligence/CHOICES.md`](store-intelligence/CHOICES.md) | Model, schema, API trade-offs |
 | [`store-intelligence/output/README.md`](store-intelligence/output/README.md) | Pipeline output file map |
